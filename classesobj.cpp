@@ -44,19 +44,44 @@ public:
 
 // Main Function
 int main() {
-    // Creating Ingredient objects
-    Ingredient sugar("Sugar", 100, "grams");
-    Ingredient flour("Flour", 200, "grams");
+    std::string recipeName;
+    int numIngredients;
 
-    // Creating Recipe object
-    Recipe cake("Cake");
+    // Get the recipe name from the user
+    std::cout << "Enter the recipe name: ";
+    std::getline(std::cin, recipeName);
 
-    // Adding ingredients to the recipe
-    cake.addIngredient(sugar);
-    cake.addIngredient(flour);
+    // Create Recipe object
+    Recipe recipe(recipeName);
+
+    // Get the number of ingredients from the user
+    std::cout << "Enter the number of ingredients: ";
+    std::cin >> numIngredients;
+    std::cin.ignore();  // Ignore the newline character left in the buffer
+
+    // Get ingredients details from the user
+    for (int i = 0; i < numIngredients; ++i) {
+        std::string name;
+        double quantity;
+        std::string unit;
+
+        std::cout << "Enter ingredient #" << (i + 1) << " name: ";
+        std::getline(std::cin, name);
+
+        std::cout << "Enter ingredient #" << (i + 1) << " quantity: ";
+        std::cin >> quantity;
+        std::cin.ignore();  // Ignore the newline character left in the buffer
+
+        std::cout << "Enter ingredient #" << (i + 1) << " unit: ";
+        std::getline(std::cin, unit);
+
+        // Create Ingredient object and add to recipe
+        Ingredient ingredient(name, quantity, unit);
+        recipe.addIngredient(ingredient);
+    }
 
     // Display the recipe
-    cake.display();
+    recipe.display();
 
     return 0;
 }
