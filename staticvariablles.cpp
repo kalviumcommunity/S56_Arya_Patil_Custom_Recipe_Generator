@@ -1,6 +1,15 @@
 #include <iostream>
 #include <string>
 
+//static int recipeCount;
+//static int nextRecipeID;
+//recipeCount: Keeps track of the total number of Recipe objects created.
+//nextRecipeID: Provides a unique ID for each Recipe object.
+//These variables are declared as static, meaning that:
+
+//Shared Across All Objects: They are shared among all instances of the Recipe class. There is only one copy of these variables, regardless of how many Recipe objects are created.
+//Persistent Across Function Calls: Their values persist across different function calls and object creations.
+
 class Recipe {
 private:
     static int recipeCount;
