@@ -1,5 +1,12 @@
 #include <iostream>
 using namespace std;
+//Static Member Function (getTotalAccounts): This function is declared with the static keyword, 
+//meaning it can be called without creating an instance of the class.
+// It accesses the static variable totalAccounts, which tracks the number of Account objects created.
+
+//static Variable (totalAccounts): This variable is shared across all instances of the Account class.
+// It's initialized to 0 and is incremented every time a new Account object is created.
+
 
 class Account {
 private:
