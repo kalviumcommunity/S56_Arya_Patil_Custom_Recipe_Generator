@@ -7,7 +7,7 @@ public:
     int productID;
     string productName;
     double price;
-
+    
     // Function to take product input
     void inputProductDetails() {
         cout << "Enter Product ID: ";
