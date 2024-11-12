@@ -18,7 +18,7 @@ public:
 class Consultation : public LegalService {
 private:
     string clientName;
-    int duration;  // in minutes
+    int duration; 
 
 public:
     Consultation(string name, int time) : clientName(name), duration(time) {}
